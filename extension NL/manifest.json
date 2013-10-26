@@ -1,0 +1,61 @@
+{
+   "name": "Survey Media Extension",
+   "version": "1.1.2",
+   "manifest_version": 2,
+   
+   "description": "Survey Media Extension",
+   // "default_locale": "en" (we'll come back to this -- could be useful for doing internationalization later on)
+   "icons": { "16": "icons/gongos_logo_RGB_FOR DIGITAL USE_TRANSPARENT_SMALL.png",
+			  "48": "icons/gongos_logo_RGB_FOR DIGITAL USE_TRANSPARENT_SMALL.png",
+			 "128": "icons/gongos_logo_RGB_FOR DIGITAL USE_TRANSPARENT_SMALL.png"},
+   
+	
+   
+   "browser_action": {
+		"default_icon": "icons/gongos_logo_RGB_FOR DIGITAL USE_TRANSPARENT_SMALL.png"
+   },
+   
+   "permissions": ["tabs", "history", "http://74.207.227.126/*"],
+   
+   "background": {
+		"scripts": ["background.js", "js/jquery-1.7.2.min.js"]
+   },
+   
+   "update_url": "http://74.207.227.126/updates.xml",
+  
+   
+   
+   "content_scripts": [
+		//facebook
+		{
+			
+			"matches": ["*://*.facebook.com/*"], 
+			"js": ["js/jquery-1.7.2.min.js", "contentscripts/facebook.js"]
+		},
+		//search
+		{ 
+			"matches": ["*://www.google.com/*"],
+			"js": ["js/jquery-1.7.2.min.js", "contentscripts/search.js"]
+		},
+		//tv
+		{
+			"matches": ["http://74.207.227.126/nl/tv/tv.html"],
+			"js": ["js/jquery-1.7.2.min.js", "contentscripts/tv.js"]
+		},
+		//stim.php
+		{
+			"matches": ["http://74.207.227.126/nl/stim.php"],
+			"js": ["js/jquery-1.7.2.min.js", "contentscripts/stimls.js", "js/instructions.js"]
+		},
+		//fromg.php
+		{
+			"matches": ["http://74.207.227.126/nl/fromg.php*"],
+			"js": ["js/jquery-1.7.2.min.js", "contentscripts/fromg.js"]
+		},
+		//exit.php
+		{
+			"matches": ["http://74.207.227.126/nl/exit.php*"],
+			"js": ["js/jquery-1.7.2.min.js", "contentscripts/exit.js"]
+		}
+   ]
+}
