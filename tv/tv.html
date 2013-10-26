@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+
+<style>
+body{
+	text-align: center;
+}
+
+img{
+	position:absolute;
+	left: 50%; 
+	margin-left: -512px;  
+	
+	top: 0px;
+	z-index:-10;
+	width: 1024px;
+	height: 944px;
+}
+
+#video{
+	margin-top: 20px;
+	z-index:5;
+}
+</style>
+<script type="text/javascript">
+function prevent(event) {
+	console.log("click");
+	event.stopPropagation();
+	event.preventDefault();
+}
+</script>
+</head>
+
+<!--photo credit http://media.simplyelectricals.co.uk/catalog/product/c/i/cirrus-8157-nc-01-er.jpg -->
+<body>
+
+<div id = 'container'>
+<p style="z-index:5; color:white">Oops, an error occurred. Please make sure your survey extension is enabled.</p>
+<div id = 'tvbackground'>
+<img src = 'img/tvstand.jpg'>
+</div>
+
+</div>
+</body>
+</html>
