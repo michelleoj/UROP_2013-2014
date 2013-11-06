@@ -4,6 +4,7 @@ var lastStart;
 var lastEnd;
 var totalTime;
 
+
 var clickedLink = false;
 
 var softTime = 30000;

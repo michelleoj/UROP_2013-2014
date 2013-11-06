@@ -2,8 +2,8 @@
 
 //
 var stimNames = {
-	"0":"TV"
-	"1":"Facebook"
+	"0":"TV",
+	"1":"Facebook",
 	"2":"Control" //unbranded
 }
 

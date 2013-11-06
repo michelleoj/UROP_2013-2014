@@ -62,6 +62,7 @@ function showStimuli() {
 		$("#instructions").html(instructions[stimNames[response.currStim]]);
 		$("#stimulusname").attr({stimulus: stimNames[response.currStim], stimID: response.currStim});
 		
+		
 		//increase counter, make softEnforce flag false again
 		chrome.extension.sendRequest({type: "nextStimChange"}, function(response) {
 			console.log(response.text);

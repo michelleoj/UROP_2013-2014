@@ -19,9 +19,9 @@ for (i=0; i< 3; i++) {
 
 //change exit link with stimsViewed info
 if (num==3){
-	$("#exitURL").attr("href", "http://survey2.gongos.com/GP120236C/I519.aspx?pid="+uid+"&s1="+stimsViewed[0]+"&s2="+stimsViewed[1]+"&s3="+stimsViewed[2]);}
+	$("#exitURL").attr("href", "https://erasmusrim.eu.qualtrics.com/SE/?SID=SV_0emkv4M3y9ExxGd&PID="+uid+"&s1="+stimsViewed[0]+"&s2="+stimsViewed[1]+"&s3="+stimsViewed[2]);}
 else if (num==2){
-	$("#exitURL").attr("href", "http://survey2.gongos.com/GP120236C/I519.aspx?pid="+uid+"&s1="+stimsViewed[0]+"&s2="+stimsViewed[1]);}
+	$("#exitURL").attr("href", "https://erasmusrim.eu.qualtrics.com/SE/?SID=SV_0emkv4M3y9ExxGd&PID="+uid+"&s1="+stimsViewed[0]+"&s2="+stimsViewed[1]);}
 else if (num==1){
-		$("#exitURL").attr("href", "http://survey2.gongos.com/GP120236C/I519.aspx?pid="+uid+"&s1="+stimsViewed[0]);
+		$("#exitURL").attr("href", "https://erasmusrim.eu.qualtrics.com/SE/?SID=SV_0emkv4M3y9ExxGd&PID="+uid+"&s1="+stimsViewed[0]);
 	}

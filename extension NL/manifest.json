@@ -32,11 +32,6 @@
 			"matches": ["*://*.facebook.com/*"], 
 			"js": ["js/jquery-1.7.2.min.js", "contentscripts/facebook.js"]
 		},
-		//search
-		{ 
-			"matches": ["*://www.google.com/*"],
-			"js": ["js/jquery-1.7.2.min.js", "contentscripts/search.js"]
-		},
 		//tv
 		{
 			"matches": ["http://74.207.227.126/nl/tv/tv.html"],

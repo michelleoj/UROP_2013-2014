@@ -103,8 +103,6 @@ if(!$sql2){
 	<p style="color:red">Please note:  This is an experimental research project and, as such, some of the experimental conditions could be slightly different than current offers in the marketplace.</p>
 	Are you ready to begin? Great! Click the <b>arrow</b> to get started!
 	<a href = "stim.php"><img src = "nextArrow.gif"></a>
-	
-	<a href = "stim.php"><img src = "nextArrow.gif"></a>
 </div>
 </div>
 </body>
