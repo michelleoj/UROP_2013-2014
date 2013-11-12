@@ -21,12 +21,15 @@ function getUrlVars()
 localStorage.incremented = "False";
 var uid = getUrlVars()["uid"];
 var segment = getUrlVars()["segment"];
+var referringLink = decodeURIComponent(getUrlVars()["return"]);
+localStorage.link = referringLink;
 
 //fromg.php tries to store user in database
 //if userid already recorded, then creates oldID div with "True"
 
 //if a new user (not oldID) then we want to reset all variables stored
 if ($("#oldID").html() != "True") {
+	var currStimArray = [];
 	localStorage.count = "0";
 	localStorage.done = "False";
 	localStorage.enforce = "none";
@@ -34,7 +37,6 @@ if ($("#oldID").html() != "True") {
 //	localStorage.softEnforce = "False";
 //	localStorage.hardEnforce = "False";
 	console.log("New ID");
-	
 	localStorage.uid = uid;
 	localStorage.segment = segment;
 

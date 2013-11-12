@@ -12,7 +12,7 @@ var hardTime = 10000;
 if (localStorage.pastStim == "undefined") {localStorage.pastStim = localStorage[parseInt(localStorage.count) - 1];}
 console.log("Last stim was "+localStorage.pastStim);
 if (localStorage.pastStim == "0") { //tv has different enforcement times. must watch most of ad
-	hardTime = 40000;
+	hardTime = 24000;
 }
 
 //moved a lot of state from background page to HTML5 local storage
@@ -20,6 +20,7 @@ if (localStorage.pastStim == "0") { //tv has different enforcement times. must w
 
 //when page loads, check enforcement and display stimuli properly
 $(document).ready(function(){
+	
 	chrome.extension.sendRequest({type: "getUserID"}, function(response) {
 	if(response.uid == -1) {
 		chrome.extension.sendRequest({type: "setUserInfo", userid: localStorage.uid, seg: localStorage.segment});
