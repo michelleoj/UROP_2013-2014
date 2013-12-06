@@ -29,7 +29,6 @@ localStorage.link = referringLink;
 
 //if a new user (not oldID) then we want to reset all variables stored
 if ($("#oldID").html() != "True") {
-	var currStimArray = [];
 	localStorage.count = "0";
 	localStorage.done = "False";
 	localStorage.enforce = "none";

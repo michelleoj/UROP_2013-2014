@@ -2,17 +2,19 @@
    "name": "Survey Media Extension",
    "version": "1.1.2",
    "manifest_version": 2,
+   "web_accessible_resources": ["icons/icon16.png"],
+   //id of extension is edoocfhjkikcebikngklbfhmeacikmao
    
    "description": "Survey Media Extension",
    // "default_locale": "en" (we'll come back to this -- could be useful for doing internationalization later on)
-   "icons": { "16": "icons/gongos_logo_RGB_FOR DIGITAL USE_TRANSPARENT_SMALL.png",
-			  "48": "icons/gongos_logo_RGB_FOR DIGITAL USE_TRANSPARENT_SMALL.png",
-			 "128": "icons/gongos_logo_RGB_FOR DIGITAL USE_TRANSPARENT_SMALL.png"},
+   "icons": { "16": "icons/icon128.png",
+			  "48": "icons/icon128.png",
+			 "128": "icons/icon128.png"},
    
 	
    
    "browser_action": {
-		"default_icon": "icons/gongos_logo_RGB_FOR DIGITAL USE_TRANSPARENT_SMALL.png"
+		"default_icon": "icons/icon128.png"
    },
    
    "permissions": ["tabs", "history", "http://74.207.227.126/*"],
@@ -30,7 +32,7 @@
 		{
 			
 			"matches": ["*://*.facebook.com/*"], 
-			"js": ["js/jquery-1.7.2.min.js", "contentscripts/facebook.js"]
+			"js": ["js/jquery-1.7.2.min.js", "contentscripts/facebook.js", "contentscripts/commentSegment.js"]
 		},
 		//tv
 		{

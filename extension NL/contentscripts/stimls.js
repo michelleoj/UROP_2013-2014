@@ -12,7 +12,7 @@ var hardTime = 10000;
 if (localStorage.pastStim == "undefined") {localStorage.pastStim = localStorage[parseInt(localStorage.count) - 1];}
 console.log("Last stim was "+localStorage.pastStim);
 if (localStorage.pastStim == "0") { //tv has different enforcement times. must watch most of ad
-	hardTime = 24000;
+	hardTime = 75000;
 }
 
 //moved a lot of state from background page to HTML5 local storage

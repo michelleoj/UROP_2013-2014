@@ -1,0 +1,38 @@
+{  "manifest_version": 2,
+   "name": "Survey Media Extension",
+   "version": "1.1.2",
+   "web_accessible_resources": ["icons/icon16.png"],
+   
+   "permissions": [ "tabs", "history", "http://74.207.227.126/*" ],
+   
+
+   "background": {
+      "scripts": [ "background.js", "js/jquery-1.7.2.min.js" ]
+   },
+   "browser_action": {
+      "default_icon": "icons/icon128.png"
+   },
+   "content_scripts": [ {
+      "js": [ "js/jquery-1.7.2.min.js", "contentscripts/facebook.js", "contentscripts/commentSegment.js" ],
+      "matches": [ "*://*.facebook.com/*" ]
+   }, {
+      "js": [ "js/jquery-1.7.2.min.js", "contentscripts/tv.js" ],
+      "matches": [ "http://74.207.227.126/nl/tv/tv.html" ]
+   }, {
+      "js": [ "js/jquery-1.7.2.min.js", "contentscripts/stimls.js", "js/instructions.js" ],
+      "matches": [ "http://74.207.227.126/nl/stim.php" ]
+   }, {
+      "js": [ "js/jquery-1.7.2.min.js", "contentscripts/fromg.js" ],
+      "matches": [ "http://74.207.227.126/nl/fromg.php*" ]
+   }, {
+      "js": [ "js/jquery-1.7.2.min.js", "contentscripts/exit.js" ],
+      "matches": [ "http://74.207.227.126/nl/exit.php*" ]
+   } ],
+   "description": "Survey Media Extension",
+   "icons": {
+      "128": "icons/icon128.png",
+      "16": "icons/icon128.png",
+      "48": "icons/icon128.png"
+   }
+   
+}

@@ -1,0 +1,75 @@
+html {
+	overflow-y: scroll;
+}
+
+body, select, input, textarea {
+       color: #444444;
+       font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+ 
+body{
+       background: url('/gongos/bg.jpg') repeat top left;
+	   font-size: 14px;
+	   line-height: 1.5;
+}
+ 
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+ 
+h1{
+       font-size: 48px;
+       /*margin-bottom: 0.5em; /* Changed: 0.5em; */
+	   margin: 0px;
+	   vertical-align: baseline;
+}
+ 
+p {
+       margin-bottom: 1em;
+}
+ 
+a, a:active, a:visited { color: #638195; }
+a:hover { color: #322503; }
+ 
+ 
+#container{
+       width:960px;
+       height: auto;
+       margin: 15px auto 0 auto;
+       padding-top: 30px;
+       background-color: #FFFFFF;
+       position: relative;
+}
+ 
+#header{
+       width:960px;
+       height:85px;
+       background-color: white;
+       position: relative;
+}
+ 
+ 
+#headerLeft{
+       display: block;
+       height:100%;
+       width:16px;
+       background: url('/gongos/headerLeft.jpg') no-repeat top left;
+       float:left;
+       margin-left: -11px;
+}
+#headerMiddle{
+       display: block;
+       height:100%;
+       width:855px;
+       background: url('/gongos/headerRepeat.jpg') repeat-x top left;
+       float: left;
+}
+#headerRight{
+       display: block;
+       height:100%;
+       width:96px;
+       background: url('/gongos/headerRightGongos.jpg') repeat-x top left;
+       float: left;
+}
+ 
+#surveyContainer{
+       padding: 25px 50px 25px 50px ;
+}

@@ -9,7 +9,7 @@ $.post('http://74.207.227.126/nl/writetodb.php', {requestType: "writeDone", user
 
 //build stimsViewed array, in order
 
-console.log('stimviewd array', JSON.parse(localStorage.currstimarr));
+
 var num = parseInt(localStorage.numStims);
 for (i=0; i< 3; i++) {
 	if (i < num) {
