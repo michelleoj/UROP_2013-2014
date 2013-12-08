@@ -3,7 +3,7 @@
 var stimURLs = {
 	"Facebook": "http://www.facebook.com",
 	"TV" : "http://74.207.227.126/nl/tv/tv.html", //for some reason the relative URL doesnt work... so hard-coding here. 
-	"Control": "http://74.207.227.126/c/u.html"  //english version of article. not nested in the nl folder
+	"Control": "http://74.207.227.126/gm_media/nl/dutchcontrol.htm"  //english version of article. not nested in the nl folder
 };
 
 //this is where state is stored in the chrome extension
