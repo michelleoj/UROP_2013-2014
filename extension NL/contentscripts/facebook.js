@@ -10,7 +10,7 @@
 
 
 
-var seg = -1;
+var seg = 1;
 //grabs user's segment
 chrome.extension.sendRequest({type: "getUserSegment"}, 
 								function(response){
@@ -25,19 +25,22 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 		var carCompany;
 		var commentBlock;
 		var width;
+		var fbPostTitle;
 		console.log("i made it here for the thing");
+		seg=1;
 		if (seg == 1) {	
+			console.log("Inside Seg = 1");
 			width = 300;
 			photoLink = 'https://scontent-a.xx.fbcdn.net/hphotos-prn2/q71/s720x720/1235085_635544349813229_310080582_n.jpg';
 			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=635544349813229&set=a.635544263146571.1073741843.114163275284675&type=1&theater';
 			commentBlock = comments["Peugeot"];
 			seeMoreText2 = "";
 			seeMoreText1 = "Met de nieuwste en de mooiste modellen... Meer beelden volgen!";
-			homeLink = "https://www.facebook.com/Peugeot";
+			homeLink = "https://www.facebook.com/Peugeotnederland";
 			ajaxHoverLink = "/ajax/hovercard/page.php?id=122374334455290";
-			carDealerLink = "<a class='profileLink' href='https://www.facebook.com/Peugeot?ref=stream&amp;hc_location=stream' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='" + ajaxHoverLink +"'>Peugeot</a>";
+			carDealerLink = "<a class='profileLink' href='https://www.facebook.com/peugeotnederland?ref=stream&amp;hc_location=stream' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='" + ajaxHoverLink +"'>Peugeot Nederland</a>";
 			carCompany = ["Peugeot", "peugeot"];
-
+			fbPostTitle = "Peugeot op de Frankfurt Motor Show 2013";
 		}
 
 		else if (seg == 2) {
@@ -45,13 +48,13 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 			photoLink = 'https://scontent-a.xx.fbcdn.net/hphotos-prn2/q71/s720x720/1209405_657439434275852_1714227341_n.jpg';
 			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=657439434275852&set=a.657439404275855.1073741855.197368453616288&type=1&theater';
 			commentBlock = comments["Opel"];
-			seeMoreText1 = "De nieuwe Insignia: een verfijnde combinatie van Duitse kwaliteit";
-			seeMoreText2 = ", dynamisch design en grensverleggende technologie. Voor meer informatie ga naar: http://bit.ly/NieuweInsignia.";
-			homeLink = "https://www.facebook.com/Opel";
+			seeMoreText1 = "Efficiëntie en connectiviteit krijgen de meeste aandacht bij de ontwikkeling van de Opel-modellen van de volgende generatie. De Monza Concept biedt daarom een fascinerende blik op de toekomst van Opel en schittert nu op de IAA in Frankfurt! Lees hier meer: <a href=\"http://www.opel.nl/News/general/Monza_concept.aspx\">http://www.opel.nl/News/general/Monza_concept.aspx</a>";
+			seeMoreText2 = "";
+			homeLink = "https://www.facebook.com/Opelnederland";
 			ajaxHoverLink = "/ajax/hovercard/page.php?id=118844698126786";
-			carDealerLink = "<a class='profileLink' href='https://www.facebook.com/Opel?ref=stream' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='" + ajaxHoverLink +"'>Opel</a>";
+			carDealerLink = "<a class='profileLink' href='https://www.facebook.com/Opelnederland?ref=stream' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='" + ajaxHoverLink +"'>Opel Nederland</a>";
 			carCompany = ["Opel", "opel"];
-
+			fbPostTitle = "Opel Monza Concept @ IAA 2013";
 		}
 
 		else if (seg == 3) {
@@ -59,12 +62,13 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 			photoLink = 'https://scontent-a.xx.fbcdn.net/hphotos-prn2/q71/s720x720/1209405_657439434275852_1714227341_n.jpg';
 			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=657439434275852&set=a.657439404275855.1073741855.197368453616288&type=1&theater';
 			commentBlock = comments["Opel"];
-			seeMoreText1 = "De nieuwe Insignia: een verfijnde combinatie van Duitse kwaliteit";
-			seeMoreText2 = ", dynamisch design en grensverleggende technologie. Voor meer informatie ga naar: http://bit.ly/NieuweInsignia.";
-			homeLink = "https://www.facebook.com/Opel";
+			seeMoreText1 = "Efficiëntie en connectiviteit krijgen de meeste aandacht bij de ontwikkeling van de Opel-modellen van de volgende generatie. De Monza Concept biedt daarom een fascinerende blik op de toekomst van Opel en schittert nu op de IAA in Frankfurt! Lees hier meer: <a href=\"http://www.opel.nl/News/general/Monza_concept.aspx\">http://www.opel.nl/News/general/Monza_concept.aspx</a>";
+			seeMoreText2 = "";
+			homeLink = "https://www.facebook.com/Opelnederland";
 			ajaxHoverLink = "/ajax/hovercard/page.php?id=118844698126786";
-			carDealerLink = "<a class='profileLink' href='https://www.facebook.com/Opel?ref=stream' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='" + ajaxHoverLink +"'>Opel</a>";
+			carDealerLink = "<a class='profileLink' href='https://www.facebook.com/Opelnederland?ref=stream' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='" + ajaxHoverLink +"'>Opel Nederland</a>";
 			carCompany = ["Opel", "opel"];
+			fbPostTitle = "Opel Monza Concept @ IAA 2013";
 		}
 
 		else if (seg == 4) {
@@ -72,12 +76,13 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 			photoLink = 'https://scontent-a.xx.fbcdn.net/hphotos-prn2/q71/s720x720/1209405_657439434275852_1714227341_n.jpg';
 			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=657439434275852&set=a.657439404275855.1073741855.197368453616288&type=1&theater';
 			commentBlock = comments["Opel"];
-			seeMoreText1 = "De nieuwe Insignia: een verfijnde combinatie van Duitse kwaliteit";
-			seeMoreText2 = ", dynamisch design en grensverleggende technologie. Voor meer informatie ga naar: http://bit.ly/NieuweInsignia.";
-			homeLink = "https://www.facebook.com/Opel";
+			seeMoreText1 = "Efficiëntie en connectiviteit krijgen de meeste aandacht bij de ontwikkeling van de Opel-modellen van de volgende generatie. De Monza Concept biedt daarom een fascinerende blik op de toekomst van Opel en schittert nu op de IAA in Frankfurt! Lees hier meer: <a href=\"http://www.opel.nl/News/general/Monza_concept.aspx\">http://www.opel.nl/News/general/Monza_concept.aspx</a>";
+			seeMoreText2 = "";
+			homeLink = "https://www.facebook.com/Opelnederland";
 			ajaxHoverLink = "/ajax/hovercard/page.php?id=118844698126786";
-			carDealerLink = "<a class='profileLink' href='https://www.facebook.com/Opel?ref=stream' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='" + ajaxHoverLink +"'>Opel</a>";
+			carDealerLink = "<a class='profileLink' href='https://www.facebook.com/Opelnederland?ref=stream' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='" + ajaxHoverLink +"'>Opel Nederland</a>";
 			carCompany = ["Opel", "opel"];
+			fbPostTitle = "Opel Monza Concept @ IAA 2013";
 		} 
 
 		//clear the first story
@@ -98,8 +103,8 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 		story = story.concat('<div class="_6a uiPopover _5pbi" data-ft="{&quot;tn&quot;:&quot;V&quot;}" id="u_jsonp_2_6"><a class="_5pbj _p" href="#" id="u_jsonp_2_9" rel="toggle"></a></div><a class="_5pb8" data-ft="{&quot;tn&quot;:&quot;m&quot;}" data-hovercard="/ajax/hovercard/user.php?id=100006965314109" href="https://www.facebook.com/robinvisser32"><img alt="" class="_s0 _rw img" src="https://scontent-a.xx.fbcdn.net/hphotos-frc3/1471798_1396723883903109_846140184_n.jpg"></a>');
 
 		//the inner content
-		//title saying that Jon shared this item
-		story = story.concat("<div class='_5pax'><div class='fwn fcg'><h5 class='_5pbw' data-ft='{&quot;tn&quot;:&quot;C&quot;}'><div class='fwn fcg'><span class='fcg'><span class='fwb'><a class='profileLink' href='https://www.facebook.com/robinvisser32' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='/ajax/hovercard/user.php?id=100006965314109'>Robin Visser</a></span> van uw uitgebreid netwerk gedeelde " + carDealerLink + "'s foto</span></div></h5></div>");
+		//title saying that Robin shared this item
+		story = story.concat("<div class='_5pax'><div class='fwn fcg'><h5 class='_5pbw' data-ft='{&quot;tn&quot;:&quot;C&quot;}'><div class='fwn fcg'><span class='fcg'><span class='fwb'><a class='profileLink' href='https://www.facebook.com/robinvisser32' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='/ajax/hovercard/user.php?id=100006965314109'>Robin Visser</a></span> heeft en <a href=\"https://www.facebook.com/opelnederland\">foto</a> van " + carDealerLink + " gedeeld.</span></div></h5></div>");
 
 
 
@@ -114,16 +119,16 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 		//photo content and blurb
 		story = story.concat('<div class="mvm uiStreamAttachments clearfix fbMainStreamAttachment"><div>');
 		story = story.concat('<a class="uiPhotoThumb largePhoto" href="' + homeLink +'" rel="theater" ajaxify="'+ajaxPhotoLink+'" target="" data-ft="{&quot;type&quot;:41,&quot;tn&quot;:&quot;E&quot;}" aria-label="Photo"><img class="img" src="' + photoLink + '" alt="" width="'+ width +'" height="200" clicktext="photo"></a>');
-		story = story.concat('<div class="fsm fwn fcg"><div class="uiAttachmentTitle" data-ft="{&quot;type&quot;:11,&quot;tn&quot;:&quot;C&quot;}"><strong><a href="'+ homeLink +'" target="" data-hovercard="'+ ajaxHoverLink + '" clicktext="album">Wall Foto</a></strong> </div><span class="caption" data-ft="{&quot;tn&quot;:&quot;L&quot;}"><div id="id_4fc5cef705ff41496484938" class="text_exposed_root">'+seeMoreText1+'<span class="text_exposed_hide">...</span><span class="text_exposed_show">'+seeMoreText2+'</span><span class="text_exposed_hide"><span class="text_exposed_link"><a onclick="CSS.addClass($(&quot;id_4fc5cef705ff41496484938&quot;), &quot;text_exposed&quot;);" clicktext="expand">Zie meer</a></span></span></div></span><div class="mts uiAttachmentDesc translationEligibleUserAttachmentMessage" data-ft="{&quot;tn&quot;:&quot;M&quot;}"><div><div class="fsm fwn fcg">By: <span class="uiAttachmentDetails" data-ft="{&quot;type&quot;:12}"><a href="http://www.facebook.com/'+ carCompany[1] +'" data-hovercard="'+ajaxHoverLink+'" clicktext="brand">'+ carCompany[0] +'</a></span></div></div></div></div>');
+		story = story.concat('<div class="fsm fwn fcg"><div class="uiAttachmentTitle" data-ft="{&quot;type&quot;:11,&quot;tn&quot;:&quot;C&quot;}"><strong><a href="'+ homeLink +'" target="" data-hovercard="'+ ajaxHoverLink + '" clicktext="album">' + fbPostTitle+'</a></strong> </div><span class="caption" data-ft="{&quot;tn&quot;:&quot;L&quot;}"><div id="id_4fc5cef705ff41496484938" class="text_exposed_root">'+seeMoreText1+'<span class="text_exposed_hide"> </span><span class="text_exposed_show">'+seeMoreText2+'</span><span class="text_exposed_hide"><span class="text_exposed_link"><a onclick="CSS.addClass($(&quot;id_4fc5cef705ff41496484938&quot;), &quot;text_exposed&quot;);" clicktext="expand"></a></span></span></div></span><div class="mts uiAttachmentDesc translationEligibleUserAttachmentMessage" data-ft="{&quot;tn&quot;:&quot;M&quot;}"><div><div class="fsm fwn fcg">By: <span class="uiAttachmentDetails" data-ft="{&quot;type&quot;:12}"><a href="http://www.facebook.com/'+ carCompany[1] +'" data-hovercard="'+ajaxHoverLink+'" clicktext="brand">'+ carCompany[0] +'</a></span></div></div></div></div>');
 		story = story.concat('</div></div>');
 
 		//stuff in between video and what people said about it (like, comment, share links)
 		story = story.concat("<span class='uiStreamFooter'><span class='UIActionLinks UIActionLinks_bottom'>");
-		story = story.concat('<button id="ourLikeButton" class="like_link stat_elem as_link" title="Like this item" type="submit" name="like" data-ft="{&quot;tn&quot;:&quot;&gt;&quot;,&quot;type&quot;:22}"><span id="ourLike" class="default_message" clicktext="like">Gefällt mir</span><span id="ourDislike" class="saving_message" clicktext="unlike">Gefällt mir nicht mehr</span></button>');
+		story = story.concat('<button id="ourLikeButton" class="like_link stat_elem as_link" title="Like this item" type="submit" name="like" data-ft="{&quot;tn&quot;:&quot;&gt;&quot;,&quot;type&quot;:22}"><span id="ourLike" class="default_message" clicktext="like">Vind ik leuk</span><span id="ourDislike" class="saving_message" clicktext="unlike">Vind ik niet meer leuk</span></button>');
 		story = story.concat(" · ");
-		story = story.concat('<label id="ourCommentButton" class="uiLinkButton comment_link" title="Einen Kommentar hinterlassen"> <input data-ft="{&quot;type&quot;:24,&quot;tn&quot;:&quot;S&quot;}" type="button" value="Kommentieren" onclick="return fc_click(this);" clicktext="Kommentieren"></label>');
+		story = story.concat('<label id="ourCommentButton" class="uiLinkButton comment_link" title="Einen Kommentar hinterlassen"> <input data-ft="{&quot;type&quot;:24,&quot;tn&quot;:&quot;S&quot;}" type="button" value="Kommentieren" onclick="return fc_click(this);" clicktext="Reageren"></label>');
 		story = story.concat(" · ");
-		story = story.concat('<a class="share_action_link" title="Send this to friends or post it on your timeline." clicktext="share">Teilen</a>');
+		story = story.concat('<a class="share_action_link" title="Send this to friends or post it on your timeline." clicktext="share">Delen</a>');
 		story = story.concat("</span></span>");
 
 		//Stuff under like, comment, share (shows up if you press those buttons)
