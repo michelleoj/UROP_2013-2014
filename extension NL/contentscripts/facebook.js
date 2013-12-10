@@ -232,15 +232,18 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 			}
 		}
 
+		var clickedOnce = false;
 		console.log('extension click there?', $('.extension-click'));
 		$('.extension-click').on('click', function(event) {
+
+			registerClick();
 			console.log('clicked');
 
-			  $(window).bind('storage', function (e) {
-			    console.log('storage changed');
-			  });
+			  // $(window).bind('storage', function (e) {
+			  //   console.log('storage changed');
+			  // });
 
-			  localStorage.setItem('a', 'test');
+			  // localStorage.setItem('a', 'test');
 
 			chrome.extension.sendRequest({type: "writeClick", stimID: "3", target: event.target.getAttribute("clicktext")});
 		});
@@ -252,6 +255,14 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 		$("#navHome").click(function() {
 			window.location.href = 'https://www.facebook.com';
 		});
+
+		function registerClick() {
+			clickedOnce = true;
+			chrome.storage.sync.set({'hasClicked?': clickedOnce}, function() {
+			    // Notify that we saved.
+			    console.log('click saved in facebook.js');
+			});
+		}
 
 	});
 	

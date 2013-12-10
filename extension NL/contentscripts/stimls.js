@@ -34,29 +34,77 @@ $(document).ready(function(){
 		lastEnd = response.endTime;
 		totalTime = lastEnd-lastStart; //time spent on last stimuli
 		console.log("The time spent on the last stimuli was "+totalTime+", start was "+lastStart+", end was "+lastEnd);
-		console.log('number times clicked in Facebook', localStorage.numOfClicks);
+		
+		var hasClicked = false;
+				
+
+		chrome.storage.onChanged.addListener(function(changes, namespace) {
+		  for (key in changes) {
+		    var storageChange = changes[key];
+		    console.log('Storage key "%s" in namespace "%s" changed. ' +
+		                'Old value was "%s", new value is "%s".',
+		                key,
+		                namespace,
+		                storageChange.oldValue,
+		                storageChange.newValue);
+		    hasClicked = storageChange.newValue;
+		    console.log('hasClicked is now ', hasClicked);
+		  }
+		});
+
 		
 		//hard enforcement
 		if ((totalTime != 0) && (totalTime < hardTime) && (localStorage.enforce !="soft")) {
-			$("#enforcementMessage").html("<b>Please spend more time on the site, using it as you normally would. Click on the link again to continue.</b><br><br>");
-			if(localStorage.incremented == "True") {localStorage.count = parseInt(localStorage.count) - 1;}
-			localStorage.done = "False";
-			var currStim = localStorage[localStorage.count];
-			$.post('http://74.207.227.126/nl/writetodb.php', {requestType: "enforcement", enforcementType: "hardEnforce", stimID: currStim, userID: localStorage.uid});
-			localStorage.enforce = "hard";
-			showStimuli();
-			$("a:last").hide();
+			// chrome.storage.sync.get("hasClicked?", function(obj) {
+			// 	hasClicked = obj;
+			// });
+			console.log('hasClicked', hasClicked);
+			if (hasClicked == false) {
+				$("#enforcementMessage").html("<b>Please look through the facebook story before moving on.</b><br><br>");
+				if(localStorage.incremented == "True") {localStorage.count = parseInt(localStorage.count) - 1;}
+				localStorage.done = "False";
+				var currStim = localStorage[localStorage.count];
+				$.post('http://74.207.227.126/nl/writetodb.php', {requestType: "enforcement", enforcementType: "clickEnforce", stimID: currStim, userID: localStorage.uid});
+				localStorage.enforce = "click";
+				showStimuli();
+				$("a:last").hide();
+			} else {
+				$("#enforcementMessage").html("<b>Please spend more time on the site, using it as you normally would. Click on the link again to continue.</b><br><br>");
+				if(localStorage.incremented == "True") {localStorage.count = parseInt(localStorage.count) - 1;}
+				localStorage.done = "False";
+				var currStim = localStorage[localStorage.count];
+				$.post('http://74.207.227.126/nl/writetodb.php', {requestType: "enforcement", enforcementType: "hardEnforce", stimID: currStim, userID: localStorage.uid});
+				localStorage.enforce = "hard";
+				showStimuli();
+				$("a:last").hide();
+			}
+			
 		}
 		//soft enforcement
 		else if ((totalTime != 0) && (totalTime < softTime) && (localStorage.enforce !="soft")) {
-			$("#softEnforcementMessage").html("<b>Are you finished viewing this media? If you are ready to continue, click on the arrow again. If you would like to go back, you may reopen the stimuli by clicking above again.</b><br><br>");
-			if(localStorage.incremented == "True") {localStorage.count = parseInt(localStorage.count) - 1;}
-			localStorage.done = "False";
-			var currStim = localStorage[localStorage.count];
-			$.post('http://74.207.227.126/nl/writetodb.php', {requestType: "enforcement", enforcementType: "softEnforce", stimID: currStim, userID: localStorage.uid});
-			localStorage.enforce = "soft";
-			showStimuli();
-			$("#nextInstructions").html('<br><b>Now click the arrow below to continue with the survey.</b><br><br>');
+			// chrome.storage.sync.get("hasClicked?", function(obj) {
+			// 	hasClicked = obj;
+			// });
+			console.log('hasClicked', hasClicked);
+			if (hasClicked == false) {
+				$("#enforcementMessage").html("<b>Please look through the facebook story before moving on.</b><br><br>");
+				if(localStorage.incremented == "True") {localStorage.count = parseInt(localStorage.count) - 1;}
+				localStorage.done = "False";
+				var currStim = localStorage[localStorage.count];
+				$.post('http://74.207.227.126/nl/writetodb.php', {requestType: "enforcement", enforcementType: "clickEnforce", stimID: currStim, userID: localStorage.uid});
+				localStorage.enforce = "click";
+				showStimuli();
+				$("#nextInstructions").html('<br><b>Now click the arrow below to continue with the survey.</b><br><br>');
+			} else {
+				$("#softEnforcementMessage").html("<b>Are you finished viewing this media? If you are ready to continue, click on the arrow again. If you would like to go back, you may reopen the stimuli by clicking above again.</b><br><br>");
+				if(localStorage.incremented == "True") {localStorage.count = parseInt(localStorage.count) - 1;}
+				localStorage.done = "False";
+				var currStim = localStorage[localStorage.count];
+				$.post('http://74.207.227.126/nl/writetodb.php', {requestType: "enforcement", enforcementType: "softEnforce", stimID: currStim, userID: localStorage.uid});
+				localStorage.enforce = "soft";
+				showStimuli();
+				$("#nextInstructions").html('<br><b>Now click the arrow below to continue with the survey.</b><br><br>');
+			}
 		}
 		
 		//if done with stimuli, send to exit page

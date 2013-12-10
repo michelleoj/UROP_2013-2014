@@ -39,6 +39,12 @@ if ($("#oldID").html() != "True") {
 	localStorage.uid = uid;
 	localStorage.segment = segment;
 
+	//set facebook enforcemnt check to false
+	chrome.storage.sync.set({'hasClicked?': false}, function() {
+			    // Notify that we saved.
+			    console.log('Settings saved in fromg file');
+			});
+
 	//read stims from page (fromg.php processes cell and puts stim order in divs)
 	var num = 0;
 	$(".stimOrder").each(function(i) {
