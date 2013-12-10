@@ -13,7 +13,10 @@ if (localStorage.pastStim == "undefined") {localStorage.pastStim = localStorage[
 console.log("Last stim was "+localStorage.pastStim);
 if (localStorage.pastStim == "0") { //tv has different enforcement times. must watch most of ad
 	hardTime = 75000;
+} else if (localStorage[localStorage.count] == "1") {
+	hardTime = 60000;
 }
+console.log('hardTime', hardTime);
 
 //moved a lot of state from background page to HTML5 local storage
 //easier to retrieve info, and is preserved indefinitely (even if browser closes)
@@ -31,6 +34,7 @@ $(document).ready(function(){
 		lastEnd = response.endTime;
 		totalTime = lastEnd-lastStart; //time spent on last stimuli
 		console.log("The time spent on the last stimuli was "+totalTime+", start was "+lastStart+", end was "+lastEnd);
+		console.log('number times clicked in Facebook', localStorage.numOfClicks);
 		
 		//hard enforcement
 		if ((totalTime != 0) && (totalTime < hardTime) && (localStorage.enforce !="soft")) {

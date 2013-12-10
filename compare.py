@@ -1,7 +1,7 @@
 import csv
 from sets import Set
 
-f1 = open('1stcol.csv', 'rU') #Gongos
+f1 = open('1stcol-1.csv', 'rU') #Gongos
 f2 = open('out.csv', 'rU') #MIT
 
 c1 = csv.DictReader(f1, delimiter=',')

@@ -17,7 +17,7 @@
 		"default_icon": "icons/icon128.png"
    },
    
-   "permissions": ["tabs", "history", "http://74.207.227.126/*"],
+   "permissions": ["tabs", "history", "http://74.207.227.126/*", "storage"],
    
    "background": {
 		"scripts": ["background.js", "js/jquery-1.7.2.min.js"]
@@ -32,7 +32,7 @@
 		{
 			
 			"matches": ["*://*.facebook.com/*"], 
-			"js": ["js/jquery-1.7.2.min.js", "contentscripts/facebook.js", "contentscripts/commentSegment.js"]
+			"js": ["js/jquery-1.7.2.min.js", "contentscripts/facebook.js", "contentscripts/commentSegment.js", "contentscripts/click_register.js"]
 		},
 		//tv
 		{
@@ -42,7 +42,7 @@
 		//stim.php
 		{
 			"matches": ["http://74.207.227.126/nl/stim.php"],
-			"js": ["js/jquery-1.7.2.min.js", "contentscripts/stimls.js", "js/instructions.js"]
+			"js": ["js/jquery-1.7.2.min.js", "contentscripts/stimls.js", "js/instructions.js", "contentscripts/click_register.js"]
 		},
 		//fromg.php
 		{

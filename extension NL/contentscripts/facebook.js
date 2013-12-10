@@ -31,11 +31,11 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 		if (seg == 1) {	
 			console.log("Inside Seg = 1");
 			width = 300;
-			photoLink = 'https://scontent-a.xx.fbcdn.net/hphotos-prn2/q71/s720x720/1235085_635544349813229_310080582_n.jpg';
-			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=635544349813229&set=a.635544263146571.1073741843.114163275284675&type=1&theater';
+			photoLink = 'https://scontent-b.xx.fbcdn.net/hphotos-prn2/1458562_672772239423773_2012221685_n.png';
+			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=672772239423773&set=pb.114163275284675.-2207520000.1386594806.&type=3&theater';
 			commentBlock = comments["Peugeot"];
 			seeMoreText2 = "";
-			seeMoreText1 = "Met de nieuwste en de mooiste modellen... Meer beelden volgen!";
+			seeMoreText1 = "Welke Peugeot die je hier ziet, heeft meer dan genoeg kofferruimte voor al je aankopen?"
 			homeLink = "https://www.facebook.com/Peugeotnederland";
 			ajaxHoverLink = "/ajax/hovercard/page.php?id=122374334455290";
 			carDealerLink = "<a class='profileLink' href='https://www.facebook.com/peugeotnederland?ref=stream&amp;hc_location=stream' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='" + ajaxHoverLink +"'>Peugeot Nederland</a>";
@@ -45,10 +45,10 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 
 		else if (seg == 2) {
 			width = 300;
-			photoLink = 'https://scontent-a.xx.fbcdn.net/hphotos-prn2/q71/s720x720/1209405_657439434275852_1714227341_n.jpg';
-			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=657439434275852&set=a.657439404275855.1073741855.197368453616288&type=1&theater';
+			photoLink = 'https://scontent-a.xx.fbcdn.net/hphotos-frc3/q71/1456136_686133754739753_1505182191_n.jpg';
+			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=686133754739753&set=pb.197368453616288.-2207520000.1386589641.&type=1&theater';
 			commentBlock = comments["Opel"];
-			seeMoreText1 = "Efficiëntie en connectiviteit krijgen de meeste aandacht bij de ontwikkeling van de Opel-modellen van de volgende generatie. De Monza Concept biedt daarom een fascinerende blik op de toekomst van Opel en schittert nu op de IAA in Frankfurt! Lees hier meer: <a href=\"http://www.opel.nl/News/general/Monza_concept.aspx\">http://www.opel.nl/News/general/Monza_concept.aspx</a>";
+			seeMoreText1 = "Weet jij in welke stad de Opel is?";
 			seeMoreText2 = "";
 			homeLink = "https://www.facebook.com/Opelnederland";
 			ajaxHoverLink = "/ajax/hovercard/page.php?id=118844698126786";
@@ -59,10 +59,10 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 
 		else if (seg == 3) {
 			width = 300;
-			photoLink = 'https://scontent-a.xx.fbcdn.net/hphotos-prn2/q71/s720x720/1209405_657439434275852_1714227341_n.jpg';
-			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=657439434275852&set=a.657439404275855.1073741855.197368453616288&type=1&theater';
+			photoLink = 'https://scontent-a.xx.fbcdn.net/hphotos-frc3/q71/1456136_686133754739753_1505182191_n.jpg';
+			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=686133754739753&set=pb.197368453616288.-2207520000.1386589641.&type=1&theater';
 			commentBlock = comments["Opel"];
-			seeMoreText1 = "Efficiëntie en connectiviteit krijgen de meeste aandacht bij de ontwikkeling van de Opel-modellen van de volgende generatie. De Monza Concept biedt daarom een fascinerende blik op de toekomst van Opel en schittert nu op de IAA in Frankfurt! Lees hier meer: <a href=\"http://www.opel.nl/News/general/Monza_concept.aspx\">http://www.opel.nl/News/general/Monza_concept.aspx</a>";
+			seeMoreText1 = "Weet jij in welke stad de Opel is?";
 			seeMoreText2 = "";
 			homeLink = "https://www.facebook.com/Opelnederland";
 			ajaxHoverLink = "/ajax/hovercard/page.php?id=118844698126786";
@@ -73,10 +73,10 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 
 		else if (seg == 4) {
 			width = 300;
-			photoLink = 'https://scontent-a.xx.fbcdn.net/hphotos-prn2/q71/s720x720/1209405_657439434275852_1714227341_n.jpg';
-			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=657439434275852&set=a.657439404275855.1073741855.197368453616288&type=1&theater';
+			photoLink = 'https://scontent-a.xx.fbcdn.net/hphotos-frc3/q71/1456136_686133754739753_1505182191_n.jpg';
+			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=686133754739753&set=pb.197368453616288.-2207520000.1386589641.&type=1&theater';
 			commentBlock = comments["Opel"];
-			seeMoreText1 = "Efficiëntie en connectiviteit krijgen de meeste aandacht bij de ontwikkeling van de Opel-modellen van de volgende generatie. De Monza Concept biedt daarom een fascinerende blik op de toekomst van Opel en schittert nu op de IAA in Frankfurt! Lees hier meer: <a href=\"http://www.opel.nl/News/general/Monza_concept.aspx\">http://www.opel.nl/News/general/Monza_concept.aspx</a>";
+			seeMoreText1 = "Weet jij in welke stad de Opel is?";
 			seeMoreText2 = "";
 			homeLink = "https://www.facebook.com/Opelnederland";
 			ajaxHoverLink = "/ajax/hovercard/page.php?id=118844698126786";
@@ -87,6 +87,7 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 
 		//clear the first story
 		var storytoinsert = $("._5pcb").find("div:first").clone().empty().insertBefore($("._4ikz").first());
+		
 		console.log("storytoinsert does it exist? ", $("#home_stream").length, $('._5pcb').length, storytoinsert);
 		console.log('segment', seg);
 		var story = "";
@@ -96,7 +97,7 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 
 		//main story content div
 		//story = story.concat("<div class='storyContent' id='ourStoryContent'><div class='UIImageBlock clearfix'>");
-		story = story.concat('<div class="_5jmm _5pat _5uch" data-cursor="MTM4NTMxOTgwODoxMzg1MzE5ODA4OjE6NzczMzU1ODM5ODkwOTkzOTc4OjEzODUzMTk3NTc6MA==" data-dedupekey="773355839890993978" data-ft="{&quot;qid&quot;:&quot;5949903270129875495&quot;,&quot;mf_story_key&quot;:&quot;773355839890993978&quot;,&quot;fbfeed_location&quot;:null}" data-insertion-position="-1" id="u_i_0">');
+		story = story.concat('<div class="_5jmm _5pat _5uch extension-click" data-cursor="MTM4NTMxOTgwODoxMzg1MzE5ODA4OjE6NzczMzU1ODM5ODkwOTkzOTc4OjEzODUzMTk3NTc6MA==" data-dedupekey="773355839890993978" data-ft="{&quot;qid&quot;:&quot;5949903270129875495&quot;,&quot;mf_story_key&quot;:&quot;773355839890993978&quot;,&quot;fbfeed_location&quot;:null}" data-insertion-position="-1" id="u_i_0">');
 		story = story.concat('<div class="clearfix _5pcr userContentWrapper">');
 
 		//the profile pic on the left (Robin Visser)
@@ -170,11 +171,11 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 		//click listeners for like, comment buttons that toggle those sections
 		
 		var count = 0;
-		$(document).click(function() {
-			count += 1;
-			console.log('click!');
-			chrome.extension.sendRequest({type: "writeClick", stimID: "3", target: "anywhere on page"});
-		});
+		// $('.extension-click').click(function() {
+		// 	count += 1;
+		// 	console.log('click!');
+		// 	chrome.extension.sendRequest({type: "writeClick", stimID: "3", target: "extension facebook story"});
+		// });
 		$("#ourLikeButton").click(function(){
 			count += 1;
 			$("#ourLike").toggle();
@@ -231,9 +232,7 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 			}
 		}
 
-		storytoinsert.mousedown(function(event) {
-			chrome.extension.sendRequest({type: "writeClick", stimID: "3", target: event.target.getAttribute("clicktext")});
-		});
+		
 
 		//Ensures that script runs when they click on FB logo or Home buttton
 		$("#pageLogo").click(function() {
