@@ -10,7 +10,7 @@
 
 
 
-var seg = 1;
+var seg = -1;
 //grabs user's segment
 chrome.extension.sendRequest({type: "getUserSegment"}, 
 								function(response){
@@ -27,7 +27,7 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 		var width;
 		var fbPostTitle;
 		console.log("i made it here for the thing");
-		seg=1;
+		
 		if (seg == 1) {	
 			console.log("Inside Seg = 1");
 			width = 300;
@@ -35,7 +35,7 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=672772239423773&set=pb.114163275284675.-2207520000.1386594806.&type=3&theater';
 			commentBlock = comments["Peugeot"];
 			seeMoreText2 = "";
-			seeMoreText1 = "Welke Peugeot die je hier ziet, heeft meer dan genoeg kofferruimte voor al je aankopen?"
+			seeMoreText1 = "Peugeot op de Frankfurt Motor Show 2013"
 			homeLink = "https://www.facebook.com/Peugeotnederland";
 			ajaxHoverLink = "/ajax/hovercard/page.php?id=122374334455290";
 			carDealerLink = "<a class='profileLink' href='https://www.facebook.com/peugeotnederland?ref=stream&amp;hc_location=stream' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='" + ajaxHoverLink +"'>Peugeot Nederland</a>";
@@ -48,7 +48,7 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 			photoLink = 'https://scontent-a.xx.fbcdn.net/hphotos-frc3/q71/1456136_686133754739753_1505182191_n.jpg';
 			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=686133754739753&set=pb.197368453616288.-2207520000.1386589641.&type=1&theater';
 			commentBlock = comments["Opel"];
-			seeMoreText1 = "Weet jij in welke stad de Opel is?";
+			seeMoreText1 = "Opel Monza Concept @ IAA 2013";
 			seeMoreText2 = "";
 			homeLink = "https://www.facebook.com/Opelnederland";
 			ajaxHoverLink = "/ajax/hovercard/page.php?id=118844698126786";
@@ -62,7 +62,7 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 			photoLink = 'https://scontent-a.xx.fbcdn.net/hphotos-frc3/q71/1456136_686133754739753_1505182191_n.jpg';
 			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=686133754739753&set=pb.197368453616288.-2207520000.1386589641.&type=1&theater';
 			commentBlock = comments["Opel"];
-			seeMoreText1 = "Weet jij in welke stad de Opel is?";
+			seeMoreText1 = "Opel Monza Concept @ IAA 2013";
 			seeMoreText2 = "";
 			homeLink = "https://www.facebook.com/Opelnederland";
 			ajaxHoverLink = "/ajax/hovercard/page.php?id=118844698126786";
@@ -76,7 +76,7 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 			photoLink = 'https://scontent-a.xx.fbcdn.net/hphotos-frc3/q71/1456136_686133754739753_1505182191_n.jpg';
 			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=686133754739753&set=pb.197368453616288.-2207520000.1386589641.&type=1&theater';
 			commentBlock = comments["Opel"];
-			seeMoreText1 = "Weet jij in welke stad de Opel is?";
+			seeMoreText1 = "Opel Monza Concept @ IAA 2013";
 			seeMoreText2 = "";
 			homeLink = "https://www.facebook.com/Opelnederland";
 			ajaxHoverLink = "/ajax/hovercard/page.php?id=118844698126786";
@@ -127,7 +127,7 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 		story = story.concat("<span class='uiStreamFooter'><span class='UIActionLinks UIActionLinks_bottom'>");
 		story = story.concat('<button id="ourLikeButton" class="like_link stat_elem as_link" title="Like this item" type="submit" name="like" data-ft="{&quot;tn&quot;:&quot;&gt;&quot;,&quot;type&quot;:22}"><span id="ourLike" class="default_message" clicktext="like">Vind ik leuk</span><span id="ourDislike" class="saving_message" clicktext="unlike">Vind ik niet meer leuk</span></button>');
 		story = story.concat(" · ");
-		story = story.concat('<label id="ourCommentButton" class="uiLinkButton comment_link" title="Einen Kommentar hinterlassen"> <input data-ft="{&quot;type&quot;:24,&quot;tn&quot;:&quot;S&quot;}" type="button" value="Kommentieren" onclick="return fc_click(this);" clicktext="Reageren"></label>');
+		story = story.concat('<label id="ourCommentButton" class="uiLinkButton comment_link" title="Einen Kommentar hinterlassen"> <input data-ft="{&quot;type&quot;:24,&quot;tn&quot;:&quot;S&quot;}" type="button" value="Reageren" onclick="return fc_click(this);" clicktext="Reageren"></label>');
 		story = story.concat(" · ");
 		story = story.concat('<a class="share_action_link" title="Send this to friends or post it on your timeline." clicktext="share">Delen</a>');
 		story = story.concat("</span></span>");

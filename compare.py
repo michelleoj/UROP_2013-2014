@@ -1,46 +1,59 @@
 import csv
 from sets import Set
 
-f1 = open('1stcol-1.csv', 'rU') #Gongos
-f2 = open('out.csv', 'rU') #MIT
-
-c1 = csv.DictReader(f1, delimiter=',')
-c2 = csv.DictReader(f2, delimiter=',')
-
-
-num_of_matches = 0
-
-c1rows = [row for row in c1]
-c2rows = [row for row in c2]
-
-##
-##for row1 in c1rows:
-##    for row2 in c2rows:
-##        if row1['PID'] == row2['PID\n'].strip('\n'):
-##            num_of_matches += 1
-##
-##print num_of_matches
-
 mit = []
 gongos = []
-for row2 in c2rows:
-     mit.append(row2['PID\n'].strip('\n'))
+with open('1stcol-1.csv', 'rU') as f1: #Gongos
+    c1 = csv.DictReader(f1, delimiter=",")
+    gongos = [row['PID'] for row in c1]
+    f1.close()
+    
+f = open('UROP_querysearch2.txt')#MIT
 
-for row1 in c1rows:
-    gongos.append(row1['PID'])
+for line in f:
+      pid = line.rstrip('\n')
+      mit.append(pid)
+    
+f.close()
+
+
+print mit[-5:-1]
+num_of_matches = 0
+
+
+
+
+##for name1 in mit:
+##    print name1
+
+##
+####for row1 in c1rows:
+####    for row2 in c2rows:
+####        if row1['PID'] == row2['PID\n'].strip('\n'):
+####            num_of_matches += 1
+####print num_of_matches
+##
+##mit = []
+##gongos = []
+##for row2 in c2rows:
+##    print row2
+##    mit.append(row2.strip('\n'))
+##
+##for row1 in c1rows:
+##    gongos.append(row1)
 
 mit = Set(mit)
 gongos = Set(gongos)
-##print len(mit.difference(gongos)) #number in mit not gongos -- 1449
-##print len(gongos.difference(mit)) #number in gongos but not mit -- 54
-
+####print len(mit.difference(gongos)) #number in mit not gongos -- 1449
+####print len(gongos.difference(mit)) #number in gongos but not mit -- 54
+##
 listOfStuff = list(gongos.difference(mit))
-theFile = open('Unique PIDs in Gongos.csv', 'w')
+theFile = open('Unique PIDs in Gongos 2.csv', 'w')
 csv_out = csv.writer(theFile, lineterminator='\n')
 for item in listOfStuff:
      csv_out.writerow([item])
 theFile.close()
-print list(gongos.difference(mit))
+##print list(gongos.difference(mit))
 
 count = 0
 for item in mit:
@@ -60,5 +73,4 @@ print count
 print len(gongos), len(gongos) - count2
 print count2
 
-f1.close()
-f2.close()
+

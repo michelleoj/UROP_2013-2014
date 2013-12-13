@@ -1,18 +1,16 @@
-{
-   "name": "Survey Media Extension",
-   "version": "1.1.2",
-   "manifest_version": 2,
-   "web_accessible_resources": ["icons/icon16.png"],
-   //id of extension is edoocfhjkikcebikngklbfhmeacikmao
+{  "manifest_version": 2,
+   "name": "Auto Enquête Extensie",
+   "version": "1.1.4",
    
-   "description": "Survey Media Extension",
-   // "default_locale": "en" (we'll come back to this -- could be useful for doing internationalization later on)
+   "web_accessible_resources": ["icons/icon16.png"],
+   
+   
    "icons": { "16": "icons/icon128.png",
 			  "48": "icons/icon128.png",
 			 "128": "icons/icon128.png"},
    
 	
-   
+   "description": "Survey Media Extension",
    "browser_action": {
 		"default_icon": "icons/icon128.png"
    },
@@ -23,33 +21,33 @@
 		"scripts": ["background.js", "js/jquery-1.7.2.min.js"]
    },
    
-   "update_url": "http://74.207.227.126/updates.xml",
+ 
   
    
    
    "content_scripts": [
-		//facebook
+		
 		{
 			
 			"matches": ["*://*.facebook.com/*"], 
 			"js": ["js/jquery-1.7.2.min.js", "contentscripts/facebook.js", "contentscripts/commentSegment.js"]
 		},
-		//tv
+	
 		{
 			"matches": ["http://74.207.227.126/nl/tv/tv.html"],
 			"js": ["js/jquery-1.7.2.min.js", "contentscripts/tv.js"]
 		},
-		//stim.php
+		
 		{
 			"matches": ["http://74.207.227.126/nl/stim.php"],
 			"js": ["js/jquery-1.7.2.min.js", "contentscripts/stimls.js", "js/instructions.js"]
 		},
-		//fromg.php
+		
 		{
 			"matches": ["http://74.207.227.126/nl/fromg.php*"],
 			"js": ["js/jquery-1.7.2.min.js", "contentscripts/fromg.js"]
 		},
-		//exit.php
+		
 		{
 			"matches": ["http://74.207.227.126/nl/exit.php*"],
 			"js": ["js/jquery-1.7.2.min.js", "contentscripts/exit.js"]
