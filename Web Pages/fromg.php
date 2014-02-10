@@ -86,9 +86,11 @@ if(!$sql2){
 }
 ?>
 
+
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="gongos.css" />
+<title>Auto Enquete</title>
 </head>
 <body>
 <div id="container">
@@ -98,10 +100,10 @@ if(!$sql2){
 	<div id="headerRight"></div>
 </div>
 <div id="surveyContainer" class="clearfix">
-	<h2>Welcome to the media website!</h2>
-	Here, you will view and interact with media. When you are finished, you will be directed back to the main survey to answer some additional questions.
-	<p style="color:red">Please note:  This is an experimental research project and, as such, some of the experimental conditions could be slightly different than current offers in the marketplace.</p>
-	Are you ready to begin? Great! Click the <b>arrow</b> to get started!
+	<h2><b>Welkom op de media website.</b></h2>
+	Hier zult u media bekijken en gebruiken. Wanneer u klaar bent, wordt u teruggestuurd naar de enqu&#234;te om een aantal extra vragen te beantwoorden.
+	<p style="color:red"> Let op: Dit is een experimenteel onderzoeksproject, daardoor zou dit onderzoek kunnen afwijken van het huidige marktaanbod.</p>
+	Bent u er klaar voor? Geweldig! Klik dan op de <b>pijl</b> om te beginnen!
 	<a href = "stim.php"><img src = "nextArrow.gif"></a>
 </div>
 </div>

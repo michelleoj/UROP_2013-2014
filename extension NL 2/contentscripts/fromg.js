@@ -38,12 +38,10 @@ if ($("#oldID").html() != "True") {
 	console.log("New ID");
 	localStorage.uid = uid;
 	localStorage.segment = segment;
-	localStorage.hasClicked = "false";
 
 	//set facebook enforcemnt check to false
 	chrome.storage.sync.set({'hasClicked?': false}, function() {
 			    // Notify that we saved.
-
 			    console.log('Settings saved in fromg file');
 			});
 

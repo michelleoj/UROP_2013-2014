@@ -35,12 +35,12 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=672772239423773&set=pb.114163275284675.-2207520000.1386594806.&type=3&theater';
 			commentBlock = comments["Peugeot"];
 			seeMoreText2 = "";
-			seeMoreText1 = "Welke Peugeot die je hier ziet, heeft meer dan genoeg kofferruimte voor al je aankopen?"
+			seeMoreText1 = "Peugeot op de Frankfurt Motor Show 2013"
 			homeLink = "https://www.facebook.com/Peugeotnederland";
 			ajaxHoverLink = "/ajax/hovercard/page.php?id=122374334455290";
 			carDealerLink = "<a class='profileLink' href='https://www.facebook.com/peugeotnederland?ref=stream&amp;hc_location=stream' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='" + ajaxHoverLink +"'>Peugeot Nederland</a>";
 			carCompany = ["Peugeot", "peugeot"];
-			fbPostTitle = "Welke Peugeot die je hier ziet, heeft meer dan genoeg kofferruimte voor al je aankopen?";
+			fbPostTitle = "Peugeot op de Frankfurt Motor Show 2013";
 		}
 
 		else if (seg == 2) {
@@ -48,13 +48,13 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 			photoLink = 'https://scontent-a.xx.fbcdn.net/hphotos-frc3/q71/1456136_686133754739753_1505182191_n.jpg';
 			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=686133754739753&set=pb.197368453616288.-2207520000.1386589641.&type=1&theater';
 			commentBlock = comments["Opel"];
-			seeMoreText1 = "Weet jij in welke stad de Opel is?";
+			seeMoreText1 = "Opel Monza Concept @ IAA 2013";
 			seeMoreText2 = "";
 			homeLink = "https://www.facebook.com/Opelnederland";
 			ajaxHoverLink = "/ajax/hovercard/page.php?id=118844698126786";
 			carDealerLink = "<a class='profileLink' href='https://www.facebook.com/Opelnederland?ref=stream' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='" + ajaxHoverLink +"'>Opel Nederland</a>";
 			carCompany = ["Opel", "opel"];
-			fbPostTitle = "Weet jij in welke stad de Opel is?";
+			fbPostTitle = "Opel Monza Concept @ IAA 2013";
 		}
 
 		else if (seg == 3) {
@@ -62,13 +62,13 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 			photoLink = 'https://scontent-a.xx.fbcdn.net/hphotos-frc3/q71/1456136_686133754739753_1505182191_n.jpg';
 			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=686133754739753&set=pb.197368453616288.-2207520000.1386589641.&type=1&theater';
 			commentBlock = comments["Opel"];
-			seeMoreText1 = "Weet jij in welke stad de Opel is?";
+			seeMoreText1 = "Opel Monza Concept @ IAA 2013";
 			seeMoreText2 = "";
 			homeLink = "https://www.facebook.com/Opelnederland";
 			ajaxHoverLink = "/ajax/hovercard/page.php?id=118844698126786";
 			carDealerLink = "<a class='profileLink' href='https://www.facebook.com/Opelnederland?ref=stream' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='" + ajaxHoverLink +"'>Opel Nederland</a>";
 			carCompany = ["Opel", "opel"];
-			fbPostTitle = "Weet jij in welke stad de Opel is?";
+			fbPostTitle = "Opel Monza Concept @ IAA 2013";
 		}
 
 		else if (seg == 4) {
@@ -76,13 +76,13 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 			photoLink = 'https://scontent-a.xx.fbcdn.net/hphotos-frc3/q71/1456136_686133754739753_1505182191_n.jpg';
 			ajaxPhotoLink = 'https://www.facebook.com/photo.php?fbid=686133754739753&set=pb.197368453616288.-2207520000.1386589641.&type=1&theater';
 			commentBlock = comments["Opel"];
-			seeMoreText1 = "Weet jij in welke stad de Opel is?";
+			seeMoreText1 = "Opel Monza Concept @ IAA 2013";
 			seeMoreText2 = "";
 			homeLink = "https://www.facebook.com/Opelnederland";
 			ajaxHoverLink = "/ajax/hovercard/page.php?id=118844698126786";
 			carDealerLink = "<a class='profileLink' href='https://www.facebook.com/Opelnederland?ref=stream' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='" + ajaxHoverLink +"'>Opel Nederland</a>";
 			carCompany = ["Opel", "opel"];
-			fbPostTitle = "Weet jij in welke stad de Opel is?";
+			fbPostTitle = "Opel Monza Concept @ IAA 2013";
 		} 
 
 		//clear the first story
@@ -105,7 +105,7 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 
 		//the inner content
 		//title saying that Robin shared this item
-		story = story.concat("<div class='_5pax'><div class='fwn fcg'><h5 class='_5pbw' data-ft='{&quot;tn&quot;:&quot;C&quot;}'><div class='fwn fcg'><span class='fcg'><span class='fwb'><a class='profileLink' href='https://www.facebook.com/robinvisser32' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='/ajax/hovercard/user.php?id=100006965314109'>Robin Visser</a></span> heeft een <a href=\"https://www.facebook.com/opelnederland\">foto</a> van " + carDealerLink + " gedeeld.</span></div></h5></div>");
+		story = story.concat("<div class='_5pax'><div class='fwn fcg'><h5 class='_5pbw' data-ft='{&quot;tn&quot;:&quot;C&quot;}'><div class='fwn fcg'><span class='fcg'><span class='fwb'><a class='profileLink' href='https://www.facebook.com/robinvisser32' data-ft='{&quot;tn&quot;:&quot;l&quot;}' data-hovercard='/ajax/hovercard/user.php?id=100006965314109'>Robin Visser</a></span> heeft en <a href=\"https://www.facebook.com/opelnederland\">foto</a> van " + carDealerLink + " gedeeld.</span></div></h5></div>");
 
 
 
@@ -120,7 +120,7 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 		//photo content and blurb
 		story = story.concat('<div class="mvm uiStreamAttachments clearfix fbMainStreamAttachment"><div>');
 		story = story.concat('<a class="uiPhotoThumb largePhoto" href="' + homeLink +'" rel="theater" ajaxify="'+ajaxPhotoLink+'" target="" data-ft="{&quot;type&quot;:41,&quot;tn&quot;:&quot;E&quot;}" aria-label="Photo"><img class="img" src="' + photoLink + '" alt="" width="'+ width +'" height="200" clicktext="photo"></a>');
-		story = story.concat('<div class="fsm fwn fcg"><div class="uiAttachmentTitle" data-ft="{&quot;type&quot;:11,&quot;tn&quot;:&quot;C&quot;}"><strong><a href="'+ homeLink +'" target="" data-hovercard="'+ ajaxHoverLink + '" clicktext="album">' + fbPostTitle+'</a></strong> </div><span class="caption" data-ft="{&quot;tn&quot;:&quot;L&quot;}"><div id="id_4fc5cef705ff41496484938" class="text_exposed_root">'+seeMoreText1+'<span class="text_exposed_hide"> </span><span class="text_exposed_show">'+seeMoreText2+'</span><span class="text_exposed_hide"><span class="text_exposed_link"><a onclick="CSS.addClass($(&quot;id_4fc5cef705ff41496484938&quot;), &quot;text_exposed&quot;);" clicktext="expand"></a></span></span></div></span><div class="mts uiAttachmentDesc translationEligibleUserAttachmentMessage" data-ft="{&quot;tn&quot;:&quot;M&quot;}"><div><div class="fsm fwn fcg">Door: <span class="uiAttachmentDetails" data-ft="{&quot;type&quot;:12}"><a href="http://www.facebook.com/'+ carCompany[1] +'" data-hovercard="'+ajaxHoverLink+'" clicktext="brand">'+ carCompany[0] +'</a></span></div></div></div></div>');
+		story = story.concat('<div class="fsm fwn fcg"><div class="uiAttachmentTitle" data-ft="{&quot;type&quot;:11,&quot;tn&quot;:&quot;C&quot;}"><strong><a href="'+ homeLink +'" target="" data-hovercard="'+ ajaxHoverLink + '" clicktext="album">' + fbPostTitle+'</a></strong> </div><span class="caption" data-ft="{&quot;tn&quot;:&quot;L&quot;}"><div id="id_4fc5cef705ff41496484938" class="text_exposed_root">'+seeMoreText1+'<span class="text_exposed_hide"> </span><span class="text_exposed_show">'+seeMoreText2+'</span><span class="text_exposed_hide"><span class="text_exposed_link"><a onclick="CSS.addClass($(&quot;id_4fc5cef705ff41496484938&quot;), &quot;text_exposed&quot;);" clicktext="expand"></a></span></span></div></span><div class="mts uiAttachmentDesc translationEligibleUserAttachmentMessage" data-ft="{&quot;tn&quot;:&quot;M&quot;}"><div><div class="fsm fwn fcg">By: <span class="uiAttachmentDetails" data-ft="{&quot;type&quot;:12}"><a href="http://www.facebook.com/'+ carCompany[1] +'" data-hovercard="'+ajaxHoverLink+'" clicktext="brand">'+ carCompany[0] +'</a></span></div></div></div></div>');
 		story = story.concat('</div></div>');
 
 		//stuff in between video and what people said about it (like, comment, share links)
@@ -135,7 +135,7 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 		//Stuff under like, comment, share (shows up if you press those buttons)
 		story = story.concat('<div><ul class="uiList uiUfi focus_target fbUfi">');
 		story = story.concat('<li id="showOnClick" class="ufiNub uiListItem uiListVerticalItemBorder"><i></i></li>');
-		story = story.concat('<li id="showOnLike" class="ufiItem uiUfiLike uiListItem uiListVerticalItemBorder"><div class="UIImageBlock clearfix"><a class="UIImageBlock_Image UIImageBlock_ICON_Image" href="#" tabindex="-1" aria-hidden="true"><label class="uiUfiLikeIcon" title="Like this item" onclick="this.form.like.click();"></label></a><div class="UIImageBlock_Content UIImageBlock_ICON_Content"></div></div></li>');
+		story = story.concat('<li id="showOnLike" class="ufiItem uiUfiLike uiListItem uiListVerticalItemBorder"><div class="UIImageBlock clearfix"><a class="UIImageBlock_Image UIImageBlock_ICON_Image" href="#" tabindex="-1" aria-hidden="true"><label class="uiUfiLikeIcon" title="Like this item" onclick="this.form.like.click();"></label></a><div class="UIImageBlock_Content UIImageBlock_ICON_Content">u dit leuk.</div></div></li>');
 		story = story.concat('<li class="translateable_info hidden_elem uiListItem  uiListVerticalItemBorder"><input type="hidden" autocomplete="off" name="translate_on_load" value=""></li>');
 
 		//comments
@@ -232,15 +232,11 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 			}
 		}
 
-		
-
 		var clickedOnce = false;
 		console.log('extension click there?', $('.extension-click'));
 		$('.extension-click').on('click', function(event) {
 
 			registerClick();
-			var port = chrome.runtime.connect({name: "clickenforcement"});
-			port.postMessage({click: "click"});
 			console.log('clicked');
 
 			  // $(window).bind('storage', function (e) {
@@ -249,8 +245,6 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 
 			  // localStorage.setItem('a', 'test');
 
-			// var port = chrome.runtime.connect({name: "clickenforcement"});
-			// port.postMessage({click: "click"});
 			chrome.extension.sendRequest({type: "writeClick", stimID: "3", target: event.target.getAttribute("clicktext")});
 		});
 

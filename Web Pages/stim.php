@@ -21,6 +21,7 @@ session_start();
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="gongos.css" />
+<title>Auto Enquete</title>
 </head>
 <body>
 <div id="container">
@@ -33,7 +34,7 @@ session_start();
 
 <h2 id="mediaTitle"></h2>
 
-<b>Instructions</b><br><br>
+<b>Instructies</b><br><br>
 
 
 <div id="enforcementMessage" style="color:red"></div>
@@ -41,8 +42,8 @@ session_start();
 <div id="instructions"></div>
 
 <br>
-<div id = "linkToStimulus"><a href="/#" onclick="return false">Click here</a></div>
-<div id = "nextInstructions"><br><b>Then close the new browser tab (not the browser) and return to this page.</b><br><br></div>
+<div id = "linkToStimulus"><a href="/#" onclick="return false">Klik hier</a></div>
+<div id = "nextInstructions"><br><b>Daarna kunt u het nieuwe venster sluiten (niet de browser) en terugkeren naar deze pagina.</b><br><br></div>
 
 
 <div id = "softEnforcementMessage" style="color:red"></div>

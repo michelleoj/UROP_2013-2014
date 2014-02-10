@@ -3,7 +3,7 @@ from sets import Set
 
 mit = []
 gongos = []
-with open('1stcol-1.csv', 'rU') as f1: #Gongos
+with open('1stcol.csv', 'rU') as f1: #Gongos
     c1 = csv.DictReader(f1, delimiter=",")
     gongos = [row['PID'] for row in c1]
     f1.close()
@@ -17,7 +17,7 @@ for line in f:
 f.close()
 
 
-print mit[-5:-1]
+print gongos[2564:2570]
 num_of_matches = 0
 
 
@@ -47,12 +47,12 @@ gongos = Set(gongos)
 ####print len(mit.difference(gongos)) #number in mit not gongos -- 1449
 ####print len(gongos.difference(mit)) #number in gongos but not mit -- 54
 ##
-listOfStuff = list(gongos.difference(mit))
-theFile = open('Unique PIDs in Gongos 2.csv', 'w')
-csv_out = csv.writer(theFile, lineterminator='\n')
-for item in listOfStuff:
-     csv_out.writerow([item])
-theFile.close()
+##listOfStuff = list(gongos.difference(mit))
+##theFile = open('Unique PIDs in Gongos 5.csv', 'w')
+##csv_out = csv.writer(theFile, lineterminator='\n')
+##for item in listOfStuff:
+##     csv_out.writerow([item])
+##theFile.close()
 ##print list(gongos.difference(mit))
 
 count = 0
@@ -68,7 +68,7 @@ for item in gongos:
 
         
 print len(mit), len(mit) - count
-print count
+print count, len(list(mit.difference(gongos)))
 
 print len(gongos), len(gongos) - count2
 print count2

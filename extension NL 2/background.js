@@ -3,7 +3,7 @@
 var stimURLs = {
 	"Facebook": "http://www.facebook.com",
 	"TV" : "http://74.207.227.126/nl/tv/tv.html", //for some reason the relative URL doesnt work... so hard-coding here. 
-	"Controle": "http://74.207.227.126/nl/artikel.htm"  //english version of article. not nested in the nl folder
+	"Control": "http://74.207.227.126/gm_media/nl/dutchcontrol.htm"  //english version of article. not nested in the nl folder
 };
 
 //this is where state is stored in the chrome extension
@@ -23,26 +23,7 @@ chrome.extension.onRequest.addListener(
 		
 		if(request.type == "showStim"){
 			var stimUrl = stimURLs[request.stimtype];
-			var index;
-			var tabindex;
-			chrome.tabs.query({
-		        url: "http://74.207.227.126/nl/stim.php"
-		    }, function(tabs) {
-		        // result is an array of tab.Tabs
-		         // There's exactely one tab matching the query.
-	            var tabindex;
-	            // details.message holds the original message
-	            for (var i = 0; i < tabs.length; i++) {
-	            	tabindex = tabs[i].index;
-		            console.log(tabs[i].title, ' tab index: ', tabs[i].index);
-		        }
-	            sendResponse({ type: "test", index: tabindex });
-	            console.log(tabindex);
-				chrome.tabs.create({"url": stimUrl, "index": tabindex+1});
-		    });
-
-
-
+			chrome.tabs.create({"url": stimUrl});
 //			sendResponse({text: request.type + " successful"});
 		}
 		

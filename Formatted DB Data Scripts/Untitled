@@ -1,0 +1,10 @@
+import csv
+
+somelist = []
+with open('mchlljy_nl_db (5) (1).csv', 'rU') as f1:
+    c1 = csv.DictReader(f1, delimiter=",")
+    somelist = [row['userid'] for row in c1]
+    f1.close()
+
+print len(somelist)
+    

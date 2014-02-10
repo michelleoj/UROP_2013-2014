@@ -22,7 +22,7 @@ $(document).ready(function(){
 			totalTime = response.totalTime; //time spent on last stimuli
 			//hard enforcement
 			if (((totalTime != 0) && (totalTime < 10000) && !(softEnforce)) || ((lastStart == -1) && (lastEnd != -1) && !(softEnforce))) {
-				$("#enforcementMessage").html("<b>Please spend more time on the site, using it as you normally would. Click on the link again to continue.</b><br><br>");
+				$("#enforcementMessage").html("<b>Gelieve meer tijd op website te besteden, gebruik de pagina zoals u normaal ook zou doen. Klik nogmaals op de link om verder te gaan.</b><br><br>");
 				chrome.extension.sendRequest({type: "hardEnforce"}, function(response){
 					console.log(response.text);
 					showStimuli();
@@ -31,11 +31,11 @@ $(document).ready(function(){
 			}
 			//soft enforcement
 			else if ((totalTime != 0) && (totalTime <30000) && !(softEnforce)) {
-				$("#softEnforcementMessage").html("<b>Are you finished viewing this media? If you are ready to continue, click on the arrow again. If you would like to go back, you may reopen the stimuli by clicking above again.</b><br><br>");
+				$("#softEnforcementMessage").html("<b>Bent u klaar met het bekijken van de media? Als u klaar bent om verder te gaan, klik dan nogmaals op de pijl. Indien u terug wilt gaan, kunt u de pagina heropenen door nogmaals op de link te klikken.</b><br><br>");
 				chrome.extension.sendRequest({type: "softEnforce"}, function(response){
 					console.log(response.text);
 					showStimuli();
-					$("#nextInstructions").html('<br><b>Now click the arrow below to continue with the survey.</b><br><br>');
+					$("#nextInstructions").html('<br><b>Klik op de onderstaande pijl om terug te keren naar de enquête.</b><br><br>');
 				});
 			}
 			//if done with stimuli, send to exit page
@@ -57,8 +57,8 @@ function showStimuli() {
 	//gets info from instructions.js, which is included in the manifest
 	chrome.extension.sendRequest({type: "getStim"}, function(response) {
 		console.log("On stimuli "+response.counter+", stimuli is "+response.currStim);
-		$("#mediaTitle").html("Media Exercise - "+header1Text[stimNames[response.currStim]]);
-		$("#linkToStimulus").html('<a href="/#" onclick="return false">Click here</a> '+clickheretoviewText[stimNames[response.currStim]]);
+		$("#mediaTitle").html("Media Oefening - "+header1Text[stimNames[response.currStim]]);
+		$("#linkToStimulus").html('<a href="/#" onclick="return false">Klik hier</a> '+clickheretoviewText[stimNames[response.currStim]]);
 		$("#instructions").html(instructions[stimNames[response.currStim]]);
 		$("#stimulusname").attr({stimulus: stimNames[response.currStim], stimID: response.currStim});
 		
@@ -85,7 +85,7 @@ $("#linkToStimulus").click(function(){
 	startTime = d.getTime();
 	chrome.extension.sendRequest({type: "startTiming"});
 	$("a:last").show();
-	$("#nextInstructions").html('<br><b>Now click the arrow below to continue with the survey.</b><br><br>');
+	$("#nextInstructions").html('<br><b>Klik op de onderstaande pijl om terug te keren naar de enquête.</b><br><br>');
 //	$.post('http://74.207.227.126/writetodb.php', {requestType: "startTiming"}, function(){console.log("startTime logged")});
 });
 

@@ -19,6 +19,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="gongos.css" />
+<title>Auto Enquete</title>
 </head>
 <body>
 <div id="container">
@@ -28,8 +29,8 @@
 	<div id="headerRight"></div>
 </div>
 <div id="surveyContainer" class="clearfix">
-<h2>Thanks for completing the media exercises!</h2>
-Please click the <b>arrow</b> to return to the survey.
+<h2>Bedankt voor het voltooien van de media oefening.</h2>
+Klik op de onderstaande <b>pijl</b> om terug te keren naar de enqu&#234;te.
 
 <br><br><a id="exitURL" href = "#"><img src = "nextArrow.gif"></a>
 </div>
