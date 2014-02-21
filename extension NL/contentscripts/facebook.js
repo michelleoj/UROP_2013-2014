@@ -12,7 +12,7 @@
 
 var seg = -1;
 //grabs user's segment
-chrome.extension.sendRequest({type: "getUserSegment"}, 
+chrome.runtime.sendMessage({type: "getUserSegment"}, 
 								function(response){
 									seg = response.segment; 
 	$(document).ready(function() {
@@ -219,7 +219,7 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 				//replace default comment text with their comment
 				$("#ourCommentList").find(":last-child").filter(".uiUfiComment").find(".ourCommentBody").html(" "+commenttext);
 				//record comment action in database
-				chrome.extension.sendRequest({type: "writeComment", stimID: "3"});
+				chrome.runtime.sendMessage({type: "writeComment", stimID: "3"});
 			}
 			
 			//account for backspacing
@@ -251,7 +251,7 @@ chrome.extension.sendRequest({type: "getUserSegment"},
 
 			// var port = chrome.runtime.connect({name: "clickenforcement"});
 			// port.postMessage({click: "click"});
-			chrome.extension.sendRequest({type: "writeClick", stimID: "3", target: event.target.getAttribute("clicktext")});
+			chrome.runtime.sendMessage({type: "writeClick", stimID: "3", target: event.target.getAttribute("clicktext")});
 		});
 
 		//Ensures that script runs when they click on FB logo or Home buttton

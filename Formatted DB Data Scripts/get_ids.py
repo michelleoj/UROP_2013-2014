@@ -86,7 +86,7 @@ print len(somelist)
 ##    print key+':', somelist[key]
     
 names = ['userId', 'start time', 'finish time', 'clicks', 'like', 'comment', 'photo']
-with open('formatteddata.csv', 'w') as f4:
+with open('clicks_Feb_19.csv', 'w') as f4:
     c4 = csv.writer(f4, delimiter=',')
     c4.writerow(names)
     for user in somelist.keys():

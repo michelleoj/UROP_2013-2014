@@ -18,7 +18,7 @@ var end = -1;
 // var sEnforce = false;
 // var stimsDone = false;
 
-chrome.extension.onRequest.addListener(
+chrome.runtime.onMessage.addListener(
 	function(request,sender,sendResponse){
 		
 		if(request.type == "showStim"){
@@ -98,22 +98,23 @@ chrome.extension.onRequest.addListener(
 			$.post('http://74.207.227.126/nl/writetodb.php', {requestType: "action", actionType: "comment", target: "null", stimID: request.stimID, userID: userid});
 		}
 
-		// else if (request.type == "startTiming") {
-			// $.post('http://74.207.227.126/writetodb.php', {requestType: "startTiming", stimID: stims[count-1], userID: userid});
-		// }
-		// else if(request.type == "hardEnforce") {
-			// count -= 1;
-// //			$.post('http://74.207.227.126/writetodb.php', {requestType: "enforcement", enforcementType: "hardEnforce", stimID: stims[count], userID: userid});
-// //			$.post('http://74.207.227.126/writetodb.php', {requestType: "deleteStart", stimID: stims[count], userID: userid}); decided we'd rather have this info, especially since we don't need to delete this for timing purposes anymore
-			// sendResponse({text:"hardEnforce successful"});
-		// }
-		// else if(request.type == "softEnforce") {
-			// count -= 1;
-// //			sEnforce = true;
-// //			$.post('http://74.207.227.126/writetodb.php', {requestType: "enforcement", enforcementType: "softEnforce", stimID: stims[count], userID: userid});
-			// sendResponse({text:"softEnforce successful"});
-		// }
+		else if (request.type == "startTiming") {
+			$.post('http://74.207.227.126/nl/writetodb.php', {requestType: "startTiming", stimID: request.stimID, userID: request.userID});
+		}
+		else if(request.type == "enforcement") {
+			if (request.enforcementType == "softEnforce") {
+				$.post('http://74.207.227.126/nl/writetodb.php', {requestType: "enforcement", enforcementType: "softEnforce", stimID: request.stimID, userID: request.userID}).fail(function(msg) {
+					alert(msg);
+				});
+			}
+			else if (request.enforcementType == "hardEnforce") {
+				$.post('http://74.207.227.126/nl/writetodb.php', {requestType: "enforcement", enforcementType: "hardEnforce", stimID: request.stimID, userID: request.userID}).fail(function(msg) {
+					alert(msg);
+				});
+			}
+			sendResponse({text:"enforcement successful"});
+		}
 	});
 
-	
+
 	

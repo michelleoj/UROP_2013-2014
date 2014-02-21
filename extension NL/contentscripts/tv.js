@@ -2,7 +2,7 @@
 //then displays correct video
 
 var seg = -1;
-chrome.extension.sendRequest({type: "getUserSegment"}, 
+chrome.runtime.sendMessage({type: "getUserSegment"}, 
 								function(response){
 									seg = response.segment;
 

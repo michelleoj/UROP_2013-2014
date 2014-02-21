@@ -57,7 +57,7 @@ if ($("#oldID").html() != "True") {
 	//no need to send cell info, since that's coming in to back-end in the php side
 	//6/1/12: sending cell info now, using extension to display stimuli
 	//6/15/12: now cell info is stored in local storage, not needed in background page
-	chrome.extension.sendRequest({type: "setUserInfo", seg: segment, userid: uid}, 
+	chrome.runtime.sendMessage({type: "setUserInfo", seg: segment, userid: uid}, 
 									function(response){
 										console.log(response.text);
 									});
@@ -80,7 +80,7 @@ else {
 		localStorage.segment = segment;
 //		localStorage.hardEnforce = "False";
 //		localStorage.softEnforce = "False";
-		chrome.extension.sendRequest({type: "setUserInfo", seg: segment, userid: uid}, 
+		chrome.runtime.sendMessage({type: "setUserInfo", seg: segment, userid: uid}, 
 									function(response){
 										console.log(response.text);
 									});

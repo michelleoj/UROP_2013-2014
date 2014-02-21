@@ -26,12 +26,12 @@ console.log('hardTime', hardTime);
 //when page loads, check enforcement and display stimuli properly
 $(document).ready(function(){
 	
-	chrome.extension.sendRequest({type: "getUserID"}, function(response) {
+	chrome.runtime.sendMessage({type: "getUserID"}, function(response) {
 	if(response.uid == -1) {
-		chrome.extension.sendRequest({type: "setUserInfo", userid: localStorage.uid, seg: localStorage.segment});
+		chrome.runtime.sendMessage({type: "setUserInfo", userid: localStorage.uid, seg: localStorage.segment});
 	}
 	//enforcement
-	chrome.extension.sendRequest({type: "getTimes"}, function(response) {
+	chrome.runtime.sendMessage({type: "getTimes"}, function(response) {
 		lastStart = response.startTime;
 		lastEnd = response.endTime;
 		totalTime = lastEnd-lastStart; //time spent on last stimuli
@@ -77,7 +77,12 @@ $(document).ready(function(){
 				if(localStorage.incremented == "True") {localStorage.count = parseInt(localStorage.count) - 1;}
 				localStorage.done = "False";
 				var currStim = localStorage[localStorage.count];
-				$.post('http://74.207.227.126/nl/writetodb.php', {requestType: "enforcement", enforcementType: "hardEnforce", stimID: currStim, userID: localStorage.uid});
+				// $.post('http://74.207.227.126/nl/writetodb.php', {requestType: "enforcement", enforcementType: "hardEnforce", stimID: currStim, userID: localStorage.uid}).done(function() {
+				// 	console.log('i wrote to db successfully');
+				// }).fail(function() {
+				//     console.log( "error; didn't save" );
+				// });
+				chrome.runtime.sendMessage({type: "enforcement", enforcementType: "hardEnforce", stimID: currStim, userID: localStorage.uid});
 				localStorage.enforce = "hard";
 				showStimuli();
 				$("a:last").hide();
@@ -87,7 +92,12 @@ $(document).ready(function(){
 				if(localStorage.incremented == "True") {localStorage.count = parseInt(localStorage.count) - 1;}
 				localStorage.done = "False";
 				var currStim = localStorage[localStorage.count];
-				$.post('http://74.207.227.126/nl/writetodb.php', {requestType: "enforcement", enforcementType: "softEnforce", stimID: currStim, userID: localStorage.uid});
+				// $.post('http://74.207.227.126/nl/writetodb.php', {requestType: "enforcement", enforcementType: "softEnforce", stimID: currStim, userID: localStorage.uid}).done(function() {
+				// 	console.log('i wrote to db successfully');
+				// }).fail(function() {
+				//     console.log( "error; didn't save" );
+				// });
+				chrome.runtime.sendMessage({type: "enforcement", enforcementType: "softEnforce", stimID: currStim, userID: localStorage.uid});
 				localStorage.enforce = "soft";
 				showStimuli();
 				$("#nextInstructions").html('<br><b>Klik op de onderstaande pijl om terug te keren naar de enqu&#234;te.</b><br><br>');
@@ -119,7 +129,12 @@ $(document).ready(function(){
 				if(localStorage.incremented == "True") {localStorage.count = parseInt(localStorage.count) - 1;}
 				localStorage.done = "False";
 				var currStim = localStorage[localStorage.count];
-				$.post('http://74.207.227.126/nl/writetodb.php', {requestType: "enforcement", enforcementType: "hardEnforce", stimID: currStim, userID: localStorage.uid});
+				// $.post('http://74.207.227.126/nl/writetodb.php', {requestType: "enforcement", enforcementType: "hardEnforce", stimID: currStim, userID: localStorage.uid}).done(function() {
+				// 	console.log('i wrote to db successfully');
+				// }).fail(function() {
+				//     console.log( "error; didn't save" );
+				// });
+				chrome.runtime.sendMessage({type: "enforcement", enforcementType: "hardEnforce", stimID: currStim, userID: localStorage.uid});
 				localStorage.enforce = "hard";
 				showStimuli();
 				$("a:last").hide();
@@ -130,7 +145,12 @@ $(document).ready(function(){
 				if(localStorage.incremented == "True") {localStorage.count = parseInt(localStorage.count) - 1;}
 				localStorage.done = "False";
 				var currStim = localStorage[localStorage.count];
-				$.post('http://74.207.227.126/nl/writetodb.php', {requestType: "enforcement", enforcementType: "softEnforce", stimID: currStim, userID: localStorage.uid});
+				// $.post('http://74.207.227.126/nl/writetodb.php', {requestType: "enforcement", enforcementType: "softEnforce", stimID: currStim, userID: localStorage.uid}).done(function() {
+				// 	console.log('i wrote to db successfully');
+				// }).fail(function() {
+				//     console.log( "error; didn't save" );
+				// });
+				chrome.runtime.sendMessage({type: "enforcement", enforcementType: "softEnforce", stimID: currStim, userID: localStorage.uid});
 				localStorage.enforce = "soft";
 				showStimuli();
 				$("#nextInstructions").html('<br><b>Klik op de onderstaande pijl om terug te keren naar de enqu&#234;te.</b><br><br>');
@@ -182,7 +202,7 @@ $("#linkToStimulus").click(function(){
 	var stimid = $("#stimulusname").attr("stimID");
 	
 	
-	chrome.extension.sendRequest({type: "showStim", stimtype: stimulus}, function(response) {
+	chrome.runtime.sendMessage({type: "showStim", stimtype: stimulus}, function(response) {
 		console.log('tab index: ', response.index);
 	});
 
@@ -211,14 +231,14 @@ $("a:last").click(function(){
 		}
 
 		
-		chrome.extension.sendRequest({type: "recordTimes", start: startTime, end: endTime}, function(response) {console.log(response.text);});
+		chrome.runtime.sendMessage({type: "recordTimes", start: startTime, end: endTime}, function(response) {console.log(response.text);});
 		//only want to write browsing history if they've clicked on the stimuli and browsed since the last time they clicked the arrow
 		if (clickedLink) {
 			var uid = localStorage.uid;
-			chrome.extension.sendRequest({type: "writeBrowsingHistory", stimID: stimid, startTime: startTime, endTime: endTime, userID: uid});
+			chrome.runtime.sendMessage({type: "writeBrowsingHistory", stimID: stimid, startTime: startTime, endTime: endTime, userID: uid});
 			var currStim = localStorage[localStorage.count];
 //			$.post('http://74.207.227.126/writetodb.php', {requestType: "updateStop", stimID: currStim, userID: localStorage.uid});
-			chrome.extension.sendRequest({type: "updateStop", stimID: currStim, userID: uid}); //not sure why this has to go through extension, but direct post doesn't work
+			chrome.runtime.sendMessage({type: "updateStop", stimID: currStim, userID: uid}); //not sure why this has to go through extension, but direct post doesn't work
 			//why doesn't direct route work here??
 		}
 		
