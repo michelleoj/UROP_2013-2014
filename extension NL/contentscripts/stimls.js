@@ -11,11 +11,11 @@ var softTime = 30000;
 var hardTime = 10000;
 if (localStorage.pastStim == "undefined") {localStorage.pastStim = localStorage[parseInt(localStorage.count) - 1];}
 console.log("Last stim was "+localStorage.pastStim);
-if (localStorage[0] == "0") { //tv has different enforcement times. must watch most of ad
+if (localStorage.pastStim == 0) { //tv has different enforcement times. must watch most of ad
 	hardTime = 75000;
-} else if (localStorage[0] == 1) {
+} else if (localStorage.pastStim == 1) {
 	hardTime = 60000;
-	
+
 }
 console.log('hardTime', hardTime);
 
@@ -25,7 +25,7 @@ console.log('hardTime', hardTime);
 
 //when page loads, check enforcement and display stimuli properly
 $(document).ready(function(){
-	
+
 	chrome.runtime.sendMessage({type: "getUserID"}, function(response) {
 	if(response.uid == -1) {
 		chrome.runtime.sendMessage({type: "setUserInfo", userid: localStorage.uid, seg: localStorage.segment});
@@ -36,12 +36,12 @@ $(document).ready(function(){
 		lastEnd = response.endTime;
 		totalTime = lastEnd-lastStart; //time spent on last stimuli
 		console.log("The time spent on the last stimuli was "+totalTime+", start was "+lastStart+", end was "+lastEnd);
-		
+
 		//initialize as hasn't clicked in facebook ad
-		
-		
+
+
 		//enforcement listeners for facebook 
-		if (localStorage[0] == 1) {
+		if (localStorage.pastStim == 1) {
 
 			chrome.storage.onChanged.addListener(function(changes, namespace) {
 			  for (key in changes) {
@@ -54,7 +54,7 @@ $(document).ready(function(){
 			                storageChange.newValue);
 			    localStorage.hasClicked = storageChange.newValue;
 			    console.log('hasClicked is now ', localStorage.hasClicked);
-			   
+
 			  }
 			});
 
@@ -67,7 +67,7 @@ $(document).ready(function(){
 			chrome.runtime.sendMessage('bool logic 2: ' + (totalTime > 0) + ' ' +  (totalTime < softTime) + ' ' +  (localStorage.enforce !="soft") + ' ' +  (!JSON.parse(localStorage.hasClicked)));
 			chrome.runtime.sendMessage('bool logic 3: ' + (totalTime > 0) + ' ' +  (totalTime < hardTime) + ' ' +  (localStorage.enforce !="soft") + ' ' +  (!JSON.parse(localStorage.hasClicked)));
 			chrome.runtime.sendMessage('bool logic 4: ' + (totalTime > 0) + ' ' +  (totalTime < softTime) + ' ' + (localStorage.enforce !="soft") + ' ' +  (!JSON.parse(localStorage.hasClicked)));
-			
+
 			if (((totalTime > 0) && (localStorage.enforce !="soft")) && ((totalTime < hardTime) || (!JSON.parse(localStorage.hasClicked)))) {
 				if(JSON.parse(localStorage.hasClicked) == false) {
 					$("#enforcementMessage").html("<b>Gelieve meer tijd op de website te besteden. Heeft u al op het bovenste bericht geklikt? Klik nogmaals op de link om terug te gaan naar de website.</b><br><br>");
@@ -108,7 +108,7 @@ $(document).ready(function(){
 				// console.log("considered done"); for logic testing purposes 
 				window.location = "exit.php";
 			}
-			
+
 			//if they were above soft limit or they already got the soft enforcement message, go on to the next stimuli
 			else {
 	//			chrome.extension.sendRequest({type: "resetEnforce"});
@@ -117,7 +117,7 @@ $(document).ready(function(){
 				showStimuli();
 				$("a:last").hide();
 			}
-			
+
 			localStorage.pastStim = "undefined";
 
 
@@ -156,12 +156,12 @@ $(document).ready(function(){
 				$("#nextInstructions").html('<br><b>Klik op de onderstaande pijl om terug te keren naar de enqu&#234;te.</b><br><br>');
 
 			}
-			
+
 			//if done with stimuli, send to exit page
 			else if (localStorage.done =="True") {
 				window.location = "exit.php";
 			}
-			
+
 			//if they were above soft limit or they already got the soft enforcement message, go on to the next stimuli
 			else {
 	//			chrome.extension.sendRequest({type: "resetEnforce"});
@@ -170,7 +170,7 @@ $(document).ready(function(){
 				showStimuli();
 				$("a:last").hide();
 			}
-			
+
 			localStorage.pastStim = "undefined";
 		}
 
@@ -200,18 +200,18 @@ $("#linkToStimulus").click(function(){
 	clickedLink = true;
 	var stimulus = $("#stimulusname").attr("stimulus");
 	var stimid = $("#stimulusname").attr("stimID");
-	
-	
+
+
 	chrome.runtime.sendMessage({type: "showStim", stimtype: stimulus}, function(response) {
 		console.log('tab index: ', response.index);
 	});
 
-	
+
 	//start timing
 	var d = new Date();
 	startTime = d.getTime();
 	$.post('http://74.207.227.126/nl/writetodb.php', {requestType: "startTiming", stimID: stimid, userID: localStorage.uid, enforce: localStorage.enforce});
-	
+
 	//Show next arrow, change instructions
 	$("a:last").show();
 	$("#nextInstructions").html('<br><b>Klik op de onderstaande pijl om terug te keren naar de enqu&#234;te.</b><br><br>');
@@ -223,14 +223,14 @@ $("a:last").click(function(){
 		var stimid = $("#stimulusname").attr("stimID");
 		var d2 = new Date();
 		endTime = d2.getTime();
-		
+
 //		if they haven't clicked on the link at all, want them to fail enforcement
 //		not sure if this is needed or not...
 		if ((typeof startTime == 'undefined') && (lastEnd != -1)) {
 			startTime = -1;
 		}
 
-		
+
 		chrome.runtime.sendMessage({type: "recordTimes", start: startTime, end: endTime}, function(response) {console.log(response.text);});
 		//only want to write browsing history if they've clicked on the stimuli and browsed since the last time they clicked the arrow
 		if (clickedLink) {
@@ -241,16 +241,15 @@ $("a:last").click(function(){
 			chrome.runtime.sendMessage({type: "updateStop", stimID: currStim, userID: uid}); //not sure why this has to go through extension, but direct post doesn't work
 			//why doesn't direct route work here??
 		}
-		
+
 		//increase counter for next stim, check if done
 		localStorage.count = parseInt(localStorage.count) + 1;
 		localStorage.incremented = "True";
 		if (localStorage.count == localStorage.numStims) {
 			localStorage.done = "True";
-				
+
 		}
 		else {
 			localStorage.done = "False";
 		}
 });
-		

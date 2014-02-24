@@ -26,9 +26,9 @@ $cells = array(
 );
 
 $stims = array(
-		0=> "Control",
-		1=> "TV",
-		2=> "Facebook", //branded
+		0=> "TV",
+		1=> "Facebook",
+		2=> "Control", //branded
 );
 
 
