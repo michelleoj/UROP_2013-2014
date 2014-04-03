@@ -39,11 +39,7 @@ $(document).ready(function(){
 
 		//initialize as hasn't clicked in facebook ad
 
-
-		//enforcement listeners for facebook 
-		if (localStorage.pastStim == 1) {
-
-			chrome.storage.onChanged.addListener(function(changes, namespace) {
+		chrome.storage.onChanged.addListener(function(changes, namespace) {
 			  for (key in changes) {
 			    var storageChange = changes[key];
 			    console.log('Storage key "%s" in namespace "%s" changed. ' +
@@ -57,6 +53,10 @@ $(document).ready(function(){
 
 			  }
 			});
+
+		//enforcement listeners for facebook 
+		if (localStorage.pastStim == 1) {
+
 
 			console.log('bool logic 1: ', (totalTime > 0), (totalTime < hardTime), (localStorage.enforce !="soft"), (JSON.parse(localStorage.hasClicked)));
 			console.log('bool logic 2: ', (totalTime > 0), (totalTime < softTime), (localStorage.enforce !="soft"), (JSON.parse(localStorage.hasClicked)));
